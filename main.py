@@ -39,6 +39,7 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(bearer)):
 
 
 @app.get("/health", status_code=200, include_in_schema=False)
+@app.head("/health", status_code=200, include_in_schema=False)
 def health():
     return {"status": "ok"}
 
